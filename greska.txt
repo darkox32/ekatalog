@@ -1,0 +1,50 @@
+C:\Users\darko\OneDrive\Desktop\aplikacija>npm run start:dev
+
+> aplikacija@0.0.1 start:dev C:\Users\darko\OneDrive\Desktop\aplikacija
+> nest start --watch
+
+[8:11:18 PM] Starting compilation in watch mode...
+
+[8:11:20 PM] Found 0 errors. Watching for file changes.
+
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [NestFactory] Starting Nest application...
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [InstanceLoader] TypeOrmModule dependencies initialized +74ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [InstanceLoader] TypeOrmCoreModule dependencies initialized +15ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [InstanceLoader] TypeOrmModule dependencies initialized +1ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [InstanceLoader] AppModule dependencies initialized +2ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [RoutesResolver] AppController {}: +8ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [RouterExplorer] Mapped {, GET} route +6ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [RoutesResolver] AdministratorController {/api/administrator}: +5ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [RouterExplorer] Mapped {/api/administrator, GET} route +1ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [RouterExplorer] Mapped {/api/administrator/:id, GET} route +37ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [RouterExplorer] Mapped {/api/administrator, PUT} route +1ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [RouterExplorer] Mapped {/api/administrator/:id, POST} route +1ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [RoutesResolver] CategoryController {/api/category}: +0ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [RouterExplorer] Mapped {/api/category/:id, GET} route +2ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [RouterExplorer] Mapped {/api/category, GET} route +6ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [RouterExplorer] Mapped {/api/category, POST} route +0ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [RouterExplorer] Mapped {/api/category/bulk, POST} route +1ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [RouterExplorer] Mapped {/api/category/:id, PATCH} route +6ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [RouterExplorer] Mapped {/api/category/:id, PUT} route +0ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [RouterExplorer] Mapped {/api/category/:id, DELETE} route +1ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [RoutesResolver] PhoneController {/api/phone}: +1ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [RouterExplorer] Mapped {/api/phone/:id, GET} route +1ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [RouterExplorer] Mapped {/api/phone, GET} route +0ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [RouterExplorer] Mapped {/api/phone, POST} route +1ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [RouterExplorer] Mapped {/api/phone/bulk, POST} route +0ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [RouterExplorer] Mapped {/api/phone/:id, PATCH} route +1ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [RouterExplorer] Mapped {/api/phone/:id, PUT} route +1ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [RouterExplorer] Mapped {/api/phone/:id, DELETE} route +0ms
+[Nest] 14732   - 05/09/2020, 8:11:21 PM   [NestApplication] Nest application successfully started +2ms
+[Nest] 14732   - 05/09/2020, 8:12:11 PM   [ExceptionsHandler] ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '."phone_id"  syntax to use near '."phone_id" = 8)' at line 1 +50260ms
+QueryFailedError: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '."phone_id" = 8)' at line 1ne 1
+    at new QueryFailedError (C:\Users\darko\OneDrive\Desktop\aplikacija\node_modules\typeorm\error\QueryFailedError.js:11:28)
+    at Query.<anonymous> (C:\Users\darko\OneDrive\Desktop\aplikacija\node_modules\typeorm\driver\mysql\MysqlQueryRunner.js:170:45)
+    at Query.<anonymous> (C:\Users\darko\OneDrive\Desktop\aplikacija\node_modules\mysql\lib\Connection.js:526:10)
+    at Query._callback (C:\Users\darko\OneDrive\Desktop\aplikacija\node_modules\mysql\lib\Connection.js:488:16)
+    at Query.Sequence.end (C:\Users\darko\OneDrive\Desktop\aplikacija\node_modules\mysql\lib\protocol\sequences\Sequence.js:83:24)
+    at Query.ErrorPacket (C:\Users\darko\OneDrive\Desktop\aplikacija\node_modules\mysql\lib\protocol\sequences\Query.js:92:8)
+    at Protocol._parsePacket (C:\Users\darko\OneDrive\Desktop\aplikacija\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\darko\OneDrive\Desktop\aplikacija\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\darko\OneDrive\Desktop\aplikacija\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\darko\OneDrive\Desktop\aplikacija\node_modules\mysql\lib\protocol\Protocol.js:38:16)
