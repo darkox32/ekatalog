@@ -4,16 +4,19 @@ import {
   Index,
   OneToMany,
   PrimaryGeneratedColumn,
+  ManyToMany,
+  JoinTable,
 } from "typeorm";
 import { PhoneNetwork } from "./phone-network.entity";
+import { Phone } from "./phone.entity";
 
 @Index("uq_network_name", ["name"], { unique: true })
 @Entity("network")
 export class Network {
-  @PrimaryGeneratedColumn({ 
-    type: "int", 
-    name: "network_id", 
-    unsigned: true 
+  @PrimaryGeneratedColumn({
+    type: "int",
+    name: "network_id",
+    unsigned: true
   })
   networkId: number;
 
@@ -26,4 +29,14 @@ export class Network {
 
   @OneToMany(() => PhoneNetwork, (phoneNetwork) => phoneNetwork.network)
   phoneNetworks: PhoneNetwork[];
+
+  @ManyToMany(type => Phone, phone => phone.networks)
+  @JoinTable({
+    name: "phone_network",
+    joinColumn: { name: "network_id", referencedColumnName: "networkId" },
+    inverseJoinColumn: { name: "phone_id", referencedColumnName: "phoneId" }
+  })
+  phones: Phone[];
+
+
 }

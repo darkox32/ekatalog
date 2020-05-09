@@ -35,3 +35,4 @@ export class Category {
   @OneToMany(() => Phone, (phone) => phone.category)
   phones: Phone[];
 }
+ 

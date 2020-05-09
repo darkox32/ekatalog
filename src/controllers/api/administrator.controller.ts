@@ -4,9 +4,6 @@ import { Administrator } from "entities/administrator.entity";
 import { AddAdministratorDto } from "src/dtos/administrator/add.administrator.dto";
 import { EditAdministratorDto } from "src/dtos/administrator/edit.administrator.dto";
 import { ApiResponse } from "misc/api.response.class";
-import { async } from "rxjs/internal/scheduler/async";
-import { resolve } from "dns";
-
 @Controller('api/administrator')
 export class AdministratorController {
     constructor(
