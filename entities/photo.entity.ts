@@ -6,38 +6,29 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { Telefon } from "./telefon.entity";
+import { Phone } from "./phone.entity";
 
 @Index("uq_photo_image_path", ["imagePath"], { unique: true })
-@Index("fk_photo_telefon_id", ["telefonId"], {})
+@Index("fk_photo_phone_id", ["phoneId"], {})
 @Entity("photo")
 export class Photo {
-  @PrimaryGeneratedColumn({
-    type: "int",
-    name: "photo_id",
-    unsigned: true
-  })
+  @PrimaryGeneratedColumn({ type: "int", name: "photo_id", unsigned: true })
   photoId: number;
 
-  @Column({
-    type: "int",
-    name: "telefon_id",
-    unsigned: true
-  })
-  telefonId: number;
+  @Column("int", { name: "phone_id", unsigned: true})
+  phoneId: number;
 
-  @Column({
-    type: "varchar",
+  @Column("varchar", {
     name: "image_path",
     unique: true,
     length: 128,
   })
   imagePath: string;
 
-  @ManyToOne(() => Telefon, (telefon) => telefon.photos, {
+  @ManyToOne(() => Phone, (phone) => phone.photos, {
     onDelete: "RESTRICT",
     onUpdate: "CASCADE",
   })
-  @JoinColumn([{ name: "telefon_id", referencedColumnName: "telefonId" }])
-  telefon: Telefon;
+  @JoinColumn([{ name: "phone_id", referencedColumnName: "phoneId" }])
+  phone: Phone;
 }

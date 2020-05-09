@@ -15,7 +15,9 @@ import { AdministratorService } from './services/administrator/administrator.ser
       password: DatabaseConfiguration.password,
       database: DatabaseConfiguration.database,
       entities: [
-        Administrator
+        Administrator,
+
+
       ]
     }),
     TypeOrmModule.forFeature([
@@ -25,4 +27,4 @@ import { AdministratorService } from './services/administrator/administrator.ser
   controllers: [AppController],
   providers: [AdministratorService],
 })
-export class AppModule {}
+export class AppModule { }

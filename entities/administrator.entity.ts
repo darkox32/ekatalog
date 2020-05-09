@@ -2,6 +2,7 @@ import { Column, Entity, Index, PrimaryGeneratedColumn } from "typeorm";
 
 @Index("uq_admin_username", ["username"], { unique: true })
 @Entity("administrator")
+
 export class Administrator {
   @PrimaryGeneratedColumn({
     type: "int",
@@ -10,15 +11,13 @@ export class Administrator {
   })
   administratorId: number;
 
-  @Column({
-    type: "varchar",
+  @Column("varchar", {
     unique: true,
     length: 32,
   })
   username: string;
 
-  @Column({
-    type: "varchar",
+  @Column("varchar", {
     name: "password_hash",
     length: 128,
   })
