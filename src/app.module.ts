@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
+import { AppController } from './controllers/api/app.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DatabaseConfiguration } from 'config/database.configuration';
 import { Administrator } from 'entities/administrator.entity';
 import { AdministratorService } from './services/administrator/administrator.service';
+import { AdministratorController } from './controllers/api/administrator.controller';
 
 @Module({
   imports: [
@@ -24,7 +25,10 @@ import { AdministratorService } from './services/administrator/administrator.ser
       Administrator
     ])
   ],
-  controllers: [AppController],
+  controllers: [
+    AppController,
+    AdministratorController
+  ],
   providers: [AdministratorService],
 })
 export class AppModule { }
