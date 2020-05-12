@@ -17,21 +17,11 @@ import { Phone } from "entities/phone.entity";
     },
     query: {
         join: {
-            category: {
-                eager: true
-            },
-            photos: {
-                eager: true
-            },
-            phonePrices: {
-                eager: true
-            },
-            phoneNetworks: {
-                eager: true
-            },
-            networks: {
-                eager: true
-            }
+            category: { eager: true },
+            photos: { eager: true },
+            phonePrices: { eager: true },
+            phoneNetworks: { eager: true },
+            networks: { eager: true }
         }
     }
 })
