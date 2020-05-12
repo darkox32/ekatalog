@@ -41,6 +41,9 @@ import { PhoneController } from './controllers/api/phone.controller';
       Administrator,
       Category,
       Phone,
+      PhonePrice,
+      PhoneNetwork,
+
     ])
   ],
   controllers: [

@@ -5,8 +5,9 @@ export class AddPhoneDto {
     ramSize: number;
     storageSize: number;
     screenSize: number;
+    price: string;
     networks: {
         networkId: number;
-        value: string;
+        band: string;
     }[];
 }
