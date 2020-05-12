@@ -1,4 +1,4 @@
-export class AddTelefonDto {
+export class AddPhoneDto {
     name: string;
     categoryId: number;
     description: string;
