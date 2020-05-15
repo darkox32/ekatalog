@@ -1,0 +1,1045 @@
+{
+	"info": {
+		"_postman_id": "fe7cd5a7-6c66-4a4f-b393-8b11bd36886e",
+		"name": "Veb servis aplikacije",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Administrator",
+			"item": [
+				{
+					"name": "Get all admins",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/administrator",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"administrator"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all admins",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/administrator",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"administrator"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "163"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a3-rdyRQ56GHl6JP3E5sq0BkEZXkA8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 09 May 2020 16:10:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"administratorId\": 1,\n        \"username\": \"Admin1\",\n        \"passwordHash\": \"023kh4joi2h1i5hk1j2b5hjk\"\n    },\n    {\n        \"administratorId\": 2,\n        \"username\": \"admn2\",\n        \"passwordHash\": \"0u25y15029ohifadh\\\\\"\n    }\n]"
+						},
+						{
+							"name": "Get all admins",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/administrator",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"administrator"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "163"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a3-rdyRQ56GHl6JP3E5sq0BkEZXkA8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 09 May 2020 16:11:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"administratorId\": 1,\n        \"username\": \"Admin1\",\n        \"passwordHash\": \"023kh4joi2h1i5hk1j2b5hjk\"\n    },\n    {\n        \"administratorId\": 2,\n        \"username\": \"admn2\",\n        \"passwordHash\": \"0u25y15029ohifadh\\\\\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get single admin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/administrator/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"administrator",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get single admin",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/administrator/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"administrator",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "77"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4d-Q5Y534kE5s0T/QsVoX+0vNgeSyk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 09 May 2020 16:11:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"administratorId\": 2,\n    \"username\": \"admn2\",\n    \"passwordHash\": \"0u25y15029ohifadh\\\\\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add new admin",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"pperic\",\n\t\"password\": \"tajnaLozinka2\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/administrator",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"administrator"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add new admin - error - username taken",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\": \"pperic\",\n\t\"password\": \"tajnaLozinka2\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/administrator",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"administrator"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-t4k/9UI9MQaVcBQ68YkMUdFYBok\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 09 May 2020 16:21:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -1001,\n    \"message\": null\n}"
+						},
+						{
+							"name": "Add new admin",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\": \"pperic\",\n\t\"password\": \"tajnaLozinka\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/administrator",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"administrator"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"47-c+icJTC48CeJv+zV4iClK3v/Sbs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 09 May 2020 16:13:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"username\": \"pperic\",\n    \"passwordHash\": \"tajnaLozinka\",\n    \"administratorId\": 3\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"password\": \"nekaLozinkahiuh20i1h45h2h512ho5h215hoi\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/administrator/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"administrator",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit admin",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"password\": \"nekaLozinkahiuh20i1h45h2h512ho5h215hoi\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/administrator/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"administrator",
+										"1"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "187"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bb-bCDjgU/Sat4pqvmF0WF57aC29wQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 09 May 2020 16:24:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"administratorId\": 1,\n    \"username\": \"Admin1\",\n    \"passwordHash\": \"C82D0A3CD48A7EBD80ED61B1B3169B9CA5C818E35ACF8E87145E163A1302C281F51780040FC2B31EB5933AEC322E15C2F967348411466D1E250AB136F128F092\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit non existing admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"password\": \"novipass\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/administrator/655",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"administrator",
+								"655"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit non existing admin",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"password\": \"novipass\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/administrator/655",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"administrator",
+										"655"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-TohoSz0THfgyH4V7rCdfcfXcq54\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 09 May 2020 16:28:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -1002,\n    \"message\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get single non existing admin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/administrator/607",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"administrator",
+								"607"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get single non existing admin",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/administrator/607",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"administrator",
+										"607"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-TohoSz0THfgyH4V7rCdfcfXcq54\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 09 May 2020 16:31:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -1002,\n    \"message\": null\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjYsInVzZXJuYW1lIjoiTm92aWFkbWluIiwiZXh0IjoxNTkwNzY0NTUwLjE0NSwiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjQuMSIsImlhdCI6MTU4OTU1NDk1MH0.8q0AFUzywAi3WQRYKnghW999xasX6Ev4pDNssF5c8t8",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d6fcd7a1-174d-4206-a307-56ba820cd808",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "521de35c-4e61-45d9-95a3-5e9433c73456",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Get categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/category/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Phone",
+			"item": [
+				{
+					"name": "Get all phones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/phone",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"phone"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all phones",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/phone",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"phone"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1018"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3fa-/hvXPjuXNFl+ZwhcMCM0ClVyZQ0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 10 May 2020 20:44:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"phoneId\": 6,\n        \"categoryId\": 1,\n        \"name\": \"Apple X\",\n        \"os\": \"iOS\",\n        \"description\": \"SuperFon\",\n        \"ramSize\": 64,\n        \"storageSize\": 128,\n        \"screenSize\": 12,\n        \"createdAt\": \"2020-05-09T13:30:45.000Z\",\n        \"category\": {\n            \"categoryId\": 1,\n            \"name\": \"Skupi\",\n            \"imagePath\": \"assets/pc.jpg\"\n        },\n        \"photos\": [\n            {\n                \"photoId\": 1,\n                \"phoneId\": 6,\n                \"imagePath\": \"img/sr/pck\"\n            }\n        ],\n        \"phonePrices\": [\n            {\n                \"phonePriceId\": 1,\n                \"phoneId\": 6,\n                \"price\": \"65.00\",\n                \"createdAt\": \"2020-05-09T17:09:21.000Z\"\n            },\n            {\n                \"phonePriceId\": 4,\n                \"phoneId\": 6,\n                \"price\": \"55.00\",\n                \"createdAt\": \"2020-05-09T17:09:34.000Z\"\n            }\n        ],\n        \"phoneNetworks\": [\n            {\n                \"phoneNetworkId\": 4,\n                \"phoneId\": 6,\n                \"networkId\": 3,\n                \"band\": \"LTE 1\"\n            },\n            {\n                \"phoneNetworkId\": 5,\n                \"phoneId\": 6,\n                \"networkId\": 1,\n                \"band\": \"TRL1\"\n            }\n        ],\n        \"networks\": [\n            {\n                \"networkId\": 1,\n                \"name\": \"2G\"\n            },\n            {\n                \"networkId\": 3,\n                \"name\": \"4G\"\n            }\n        ]\n    },\n    {\n        \"phoneId\": 8,\n        \"categoryId\": 4,\n        \"name\": \"Samsung A70\",\n        \"os\": \"Android\",\n        \"description\": \"MojFonhue\",\n        \"ramSize\": 128,\n        \"storageSize\": 246,\n        \"screenSize\": 22,\n        \"createdAt\": \"2020-05-09T17:47:06.000Z\",\n        \"category\": {\n            \"categoryId\": 4,\n            \"name\": \"Premium\",\n            \"imagePath\": \"assets/pc/e300.jpg\"\n        },\n        \"photos\": [],\n        \"phonePrices\": [],\n        \"phoneNetworks\": [],\n        \"networks\": []\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get single phone",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/phone/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"phone",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new phone",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Apple3\",\r\n    \"categoryId\": \"4\",\r\n    \"description\": \"Kratak opis..121212321423543gsdgsdg.\",\r\n    \"ramSize\": \"32\",\r\n    \"storageSize\": \"10\",\r\n    \"screenSize\": \"15\",\r\n    \"price\": \"950.90\",\r\n    \"networks\": [\r\n    \t{\r\n    \t\"networkId\": \"1\",\r\n        \"band\": \"LTE 15005\"\r\n    \t}\r\n   ]\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/phone/createFull",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"phone",
+								"createFull"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"Noviadmin\",\n\t\"password\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login - username incorrect",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\": \"Noviadmizzn\",\n\t\"password\": \"admin\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-jVzHjGg0W81AgoBNOOnaoLkouLY\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 15 May 2020 15:05:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -3001,\n    \"message\": null\n}"
+						},
+						{
+							"name": "Login - password incorrect",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\": \"Noviadmin\",\n\t\"password\": \"admin1\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-yGnd1fUn+KRemOJUJKfIJoExxS4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 15 May 2020 15:04:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -3002,\n    \"message\": null\n}"
+						},
+						{
+							"name": "Login - when admin exists & password is correct",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\": \"Noviadmin\",\n\t\"password\": \"admin\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "299"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12b-sX33SIDHreWyAyRYd8aSqYpVLl0\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 15 May 2020 15:02:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"administratorId\": 6,\n    \"username\": \"Noviadmin\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjYsInVzZXJuYW1lIjoiTm92aWFkbWluIiwiZXh0IjoxNTkwNzY0NTUwLjE0NSwiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjQuMSIsImlhdCI6MTU4OTU1NDk1MH0.8q0AFUzywAi3WQRYKnghW999xasX6Ev4pDNssF5c8t8\"\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
