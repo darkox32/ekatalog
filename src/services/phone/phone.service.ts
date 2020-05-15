@@ -4,7 +4,7 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { Phone } from "entities/phone.entity";
 import { ApiResponse } from "misc/api.response.class";
-import { AddPhoneDto } from "src/dtos/phone/add.phone.dto";
+import { AddPhoneDto } from "dtos/phone/add.phone.dto";
 import { PhonePrice } from "entities/phone-price.entity";
 import { PhoneNetwork } from "entities/phone-network.entity";
 

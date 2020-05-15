@@ -2,7 +2,7 @@ import { Controller, Post, Body } from "@nestjs/common";
 import { Crud } from "@nestjsx/crud";
 import { PhoneService } from "src/services/phone/phone.service";
 import { Phone } from "entities/phone.entity";
-import { AddPhoneDto } from "src/dtos/phone/add.phone.dto";
+import { AddPhoneDto } from "dtos/phone/add.phone.dto";
 
 @Controller('api/phone')
 @Crud({

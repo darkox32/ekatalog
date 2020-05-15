@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Administrator } from 'entities/administrator.entity';
 import { Repository } from 'typeorm';
-import { AddAdministratorDto } from 'src/dtos/administrator/add.administrator.dto';
-import { EditAdministratorDto } from 'src/dtos/administrator/edit.administrator.dto';
+import { AddAdministratorDto } from 'dtos/administrator/add.administrator.dto';
+import { EditAdministratorDto } from 'dtos/administrator/edit.administrator.dto';
 import { ApiResponse } from 'misc/api.response.class';
 import * as crypto from 'crypto';
 
@@ -42,7 +42,7 @@ export class AdministratorService {
 
         let newAdmin: Administrator = new Administrator();
         newAdmin.username = data.username;
-        newAdmin.passwordHash = data.password;
+        newAdmin.passwordHash = passwordHashString;
 
         return new Promise((resolve) => {
             this.administrator.save(newAdmin)
