@@ -12,7 +12,14 @@
 					"name": "Get all admins",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
 						"url": {
 							"raw": "http://localhost:3000/api/administrator",
 							"protocol": "http",
@@ -28,10 +35,17 @@
 					},
 					"response": [
 						{
-							"name": "Get all admins",
+							"name": "Get all admins - uspesno",
 							"originalRequest": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
 								"url": {
 									"raw": "http://localhost:3000/api/administrator",
 									"protocol": "http",
@@ -59,15 +73,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "163"
+									"value": "563"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"a3-rdyRQ56GHl6JP3E5sq0BkEZXkA8\""
+									"value": "W/\"233-9FJaI07kilWFLKawcJ5NUZhW1VQ\""
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 09 May 2020 16:10:44 GMT"
+									"value": "Mon, 18 May 2020 15:19:46 GMT"
 								},
 								{
 									"key": "Connection",
@@ -75,57 +89,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"administratorId\": 1,\n        \"username\": \"Admin1\",\n        \"passwordHash\": \"023kh4joi2h1i5hk1j2b5hjk\"\n    },\n    {\n        \"administratorId\": 2,\n        \"username\": \"admn2\",\n        \"passwordHash\": \"0u25y15029ohifadh\\\\\"\n    }\n]"
-						},
-						{
-							"name": "Get all admins",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:3000/api/administrator",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"api",
-										"administrator"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "163"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"a3-rdyRQ56GHl6JP3E5sq0BkEZXkA8\""
-								},
-								{
-									"key": "Date",
-									"value": "Sat, 09 May 2020 16:11:17 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								}
-							],
-							"cookie": [],
-							"body": "[\n    {\n        \"administratorId\": 1,\n        \"username\": \"Admin1\",\n        \"passwordHash\": \"023kh4joi2h1i5hk1j2b5hjk\"\n    },\n    {\n        \"administratorId\": 2,\n        \"username\": \"admn2\",\n        \"passwordHash\": \"0u25y15029ohifadh\\\\\"\n    }\n]"
+							"body": "[\n    {\n        \"administratorId\": 1,\n        \"username\": \"Admin1\",\n        \"passwordHash\": \"C82D0A3CD48A7EBD80ED61B1B3169B9CA5C818E35ACF8E87145E163A1302C281F51780040FC2B31EB5933AEC322E15C2F967348411466D1E250AB136F128F092\"\n    },\n    {\n        \"administratorId\": 8,\n        \"username\": \"Jovo2\",\n        \"passwordHash\": \"D184D6BBC47CCDA893B84FDF8F8A130D6454690C364E591DA5FD3347E25A474E51C18E2067D626468314ADFEDB107AE647203D34CBEA928572B014C90BBCA47D\"\n    },\n    {\n        \"administratorId\": 9,\n        \"username\": \"Darko\",\n        \"passwordHash\": \"6FE206A646B55F4827FA241F42DCB0484A5269AAB8F595CC565DF23DFE03AECA48292E8E75C2DD2CA769B2034FA8E6EA253ABEBBE33E532D65C04367FEFEA413\"\n    }\n]"
 						}
 					]
 				},
@@ -199,6 +163,57 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"administratorId\": 2,\n    \"username\": \"admn2\",\n    \"passwordHash\": \"0u25y15029ohifadh\\\\\"\n}"
+						},
+						{
+							"name": "Get single admin - doesnt exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/administrator/44",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"administrator",
+										"44"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-TohoSz0THfgyH4V7rCdfcfXcq54\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 18 May 2020 15:22:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -1002,\n    \"message\": null\n}"
 						}
 					]
 				},
@@ -618,7 +633,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjYsInVzZXJuYW1lIjoiTm92aWFkbWluIiwiZXh0IjoxNTkwNzY0NTUwLjE0NSwiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjQuMSIsImlhdCI6MTU4OTU1NDk1MH0.8q0AFUzywAi3WQRYKnghW999xasX6Ev4pDNssF5c8t8",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjksInVzZXJuYW1lIjoiRGFya28iLCJleHAiOjE1OTA3NzEyNTQuNDE0LCJpcCI6Ijo6MSIsInVhIjoiUG9zdG1hblJ1bnRpbWUvNy4yNC4xIiwiaWF0IjoxNTg5NTYxNjU0fQ.qpoKPWD3IVTi_Bib0G9jzOfJo0xIpjuTOYkIEI0duUw",
 						"type": "string"
 					}
 				]
@@ -668,7 +683,58 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get all categories - success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"category"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "259"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"103-O5vgmVw7uEs+Reu5B/yX8pMuuOw\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 18 May 2020 15:20:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"categoryId\": 1,\n        \"name\": \"Skupi\",\n        \"imagePath\": \"assets/pc.jpg\"\n    },\n    {\n        \"categoryId\": 2,\n        \"name\": \"Jeftini\",\n        \"imagePath\": \"assets/home.jpg\"\n    },\n    {\n        \"categoryId\": 3,\n        \"name\": \"Srednji\",\n        \"imagePath\": \"assets/pc/a500.jpg\"\n    },\n    {\n        \"categoryId\": 4,\n        \"name\": \"Premium\",\n        \"imagePath\": \"assets/pc/e300.jpg\"\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "Get single category",
@@ -689,7 +755,110 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get single category - sucess",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/category/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"category",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b-mZlxL2y+lKzaWk9pfs1NKiKAwkU\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 18 May 2020 15:20:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"categoryId\": 1,\n    \"name\": \"Skupi\",\n    \"imagePath\": \"assets/pc.jpg\"\n}"
+						},
+						{
+							"name": "Get single category - doesnt exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/category/59",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"category",
+										"59"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "69"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"45-r7E4Wl/9RQMuIZkVlEWottXhBA4\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 18 May 2020 15:21:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Category not found\",\n    \"error\": \"Not Found\"\n}"
+						}
+					]
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -787,7 +956,110 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get single phone - doesnt exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/phone/55",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"phone",
+										"55"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"42-ccud7H/zYfP5XG6YBDRb2R/NkM8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 18 May 2020 15:22:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Phone not found\",\n    \"error\": \"Not Found\"\n}"
+						},
+						{
+							"name": "Get single phone - sucess",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/phone/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"phone",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "698"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2ba-SXIo7go4BYuTIcg/+ahaWl17LYs\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 18 May 2020 15:22:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"phoneId\": 6,\n    \"categoryId\": 1,\n    \"name\": \"Apple X\",\n    \"os\": \"iOS\",\n    \"description\": \"SuperFon\",\n    \"ramSize\": 64,\n    \"storageSize\": 128,\n    \"screenSize\": 12,\n    \"createdAt\": \"2020-05-09T13:30:45.000Z\",\n    \"category\": {\n        \"categoryId\": 1,\n        \"name\": \"Skupi\",\n        \"imagePath\": \"assets/pc.jpg\"\n    },\n    \"photos\": [\n        {\n            \"photoId\": 1,\n            \"phoneId\": 6,\n            \"imagePath\": \"img/sr/pck\"\n        }\n    ],\n    \"phonePrices\": [\n        {\n            \"phonePriceId\": 1,\n            \"phoneId\": 6,\n            \"price\": \"65.00\",\n            \"createdAt\": \"2020-05-09T17:09:21.000Z\"\n        },\n        {\n            \"phonePriceId\": 4,\n            \"phoneId\": 6,\n            \"price\": \"55.00\",\n            \"createdAt\": \"2020-05-09T17:09:34.000Z\"\n        }\n    ],\n    \"phoneNetworks\": [\n        {\n            \"phoneNetworkId\": 5,\n            \"phoneId\": 6,\n            \"networkId\": 1,\n            \"band\": \"TRL1\"\n        },\n        {\n            \"phoneNetworkId\": 4,\n            \"phoneId\": 6,\n            \"networkId\": 3,\n            \"band\": \"LTE 1\"\n        }\n    ],\n    \"networks\": [\n        {\n            \"networkId\": 1,\n            \"name\": \"2G\"\n        },\n        {\n            \"networkId\": 3,\n            \"name\": \"4G\"\n        }\n    ]\n}"
+						}
+					]
 				},
 				{
 					"name": "Create new phone",
@@ -818,7 +1090,69 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Create new phone - sucess",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Samsung 45\",\r\n    \"categoryId\": \"2\",\r\n    \"description\": \"Kratak opis..121212321423543gsdgsdg.\",\r\n    \"ramSize\": \"32\",\r\n    \"storageSize\": \"10\",\r\n    \"screenSize\": \"15\",\r\n    \"price\": \"950.90\",\r\n    \"networks\": [\r\n    \t{\r\n    \t\"networkId\": \"1\",\r\n        \"band\": \"LTE 15005\"\r\n    \t}\r\n   ]\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/phone/createFull",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"phone",
+										"createFull"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "502"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f6-aia90aA9MrkiHH+8WVZg//S53rc\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 18 May 2020 15:22:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"phoneId\": 12,\n    \"categoryId\": 2,\n    \"name\": \"Samsung 45\",\n    \"os\": null,\n    \"description\": \"Kratak opis..121212321423543gsdgsdg.\",\n    \"ramSize\": 32,\n    \"storageSize\": 10,\n    \"screenSize\": 15,\n    \"createdAt\": \"2020-05-18T15:22:57.000Z\",\n    \"category\": {\n        \"categoryId\": 2,\n        \"name\": \"Jeftini\",\n        \"imagePath\": \"assets/home.jpg\"\n    },\n    \"networks\": [\n        {\n            \"networkId\": 1,\n            \"name\": \"2G\"\n        }\n    ],\n    \"phoneNetworks\": [\n        {\n            \"phoneNetworkId\": 9,\n            \"phoneId\": 12,\n            \"networkId\": 1,\n            \"band\": \"LTE 15005\"\n        }\n    ],\n    \"phonePrices\": [\n        {\n            \"phonePriceId\": 8,\n            \"phoneId\": 12,\n            \"price\": \"950.90\",\n            \"createdAt\": \"2020-05-18T15:22:57.000Z\"\n        }\n    ]\n}"
+						}
+					]
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -1039,6 +1373,38 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjksInVzZXJuYW1lIjoiRGFya28iLCJleHAiOjE1OTA3NzEyNTQuNDE0LCJpcCI6Ijo6MSIsInVhIjoiUG9zdG1hblJ1bnRpbWUvNy4yNC4xIiwiaWF0IjoxNTg5NTYxNjU0fQ.qpoKPWD3IVTi_Bib0G9jzOfJo0xIpjuTOYkIEI0duUw",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "60058a92-d0fc-4dff-be04-0d977f2637ba",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "96c113fb-a360-44e0-924f-84d96500fb35",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	],
 	"protocolProfileBehavior": {}
