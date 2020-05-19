@@ -2,16 +2,16 @@ import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
 import { AppController } from './controllers/api/app.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DatabaseConfiguration } from 'config/database.configuration';
-import { Administrator } from 'entities/administrator.entity';
+import { Administrator } from 'src/entities/administrator.entity';
 import { AdministratorService } from './services/administrator/administrator.service';
 import { AdministratorController } from './controllers/api/administrator.controller';
-import { Category } from 'entities/category.entity';
-import { Network } from 'entities/network.entity';
-import { PhoneNetwork } from 'entities/phone-network.entity';
-import { PhonePrice } from 'entities/phone-price.entity';
-import { Phone } from 'entities/phone.entity';
-import { Photo } from 'entities/photo.entity';
-import { User } from 'entities/users.entity';
+import { Category } from 'src/entities/category.entity';
+import { Network } from 'src/entities/network.entity';
+import { PhoneNetwork } from 'src/entities/phone-network.entity';
+import { PhonePrice } from 'src/entities/phone-price.entity';
+import { Phone } from 'src/entities/phone.entity';
+import { Photo } from 'src/entities/photo.entity';
+import { User } from 'src/entities/users.entity';
 import { CategoryController } from './controllers/api/category.controller';
 import { CateogryService } from './services/category/category.service';
 import { PhoneService } from './services/phone/phone.service';
@@ -23,7 +23,7 @@ import { PhotoService } from './services/photo/photo.service';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'mariadb', // Ako koristite MySQL, napisite mysql
+      type: 'mysql',
       host: DatabaseConfiguration.hostname,
       port: 3306,
       username: DatabaseConfiguration.username,

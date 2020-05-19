@@ -2,11 +2,11 @@ import { Injectable } from "@nestjs/common";
 import { TypeOrmCrudService } from "@nestjsx/crud-typeorm";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
-import { Phone } from "entities/phone.entity";
+import { Phone } from "src/entities/phone.entity";
 import { ApiResponse } from "misc/api.response.class";
 import { AddPhoneDto } from "dtos/phone/add.phone.dto";
-import { PhonePrice } from "entities/phone-price.entity";
-import { PhoneNetwork } from "entities/phone-network.entity";
+import { PhonePrice } from "src/entities/phone-price.entity";
+import { PhoneNetwork } from "src/entities/phone-network.entity";
 
 @Injectable()
 export class PhoneService extends TypeOrmCrudService<Phone>{
