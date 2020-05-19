@@ -18,6 +18,7 @@ import { PhoneService } from './services/phone/phone.service';
 import { PhoneController } from './controllers/api/phone.controller';
 import { AuthController } from './controllers/api/auth.controller';
 import { AuthMiddleware } from './middlewares/auth.middleware';
+import { PhotoService } from './services/photo/photo.service';
 
 @Module({
   imports: [
@@ -42,9 +43,12 @@ import { AuthMiddleware } from './middlewares/auth.middleware';
     TypeOrmModule.forFeature([
       Administrator,
       Category,
-      Phone,
-      PhonePrice,
+      Network,
       PhoneNetwork,
+      PhonePrice,
+      Phone,
+      Photo,
+      User
 
     ])
   ],
@@ -60,6 +64,7 @@ import { AuthMiddleware } from './middlewares/auth.middleware';
     AdministratorService,
     CateogryService,
     PhoneService,
+    PhotoService,
   ],
 
   exports: [
