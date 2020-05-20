@@ -19,6 +19,8 @@ import { PhoneController } from './controllers/api/phone.controller';
 import { AuthController } from './controllers/api/auth.controller';
 import { AuthMiddleware } from './middlewares/auth.middleware';
 import { PhotoService } from './services/photo/photo.service';
+import { NetworkService } from './services/network/network.service';
+import { NetworkController } from './controllers/api/network.controller';
 
 @Module({
   imports: [
@@ -58,6 +60,7 @@ import { PhotoService } from './services/photo/photo.service';
     CategoryController,
     PhoneController,
     AuthController,
+    NetworkController,
 
   ],
   providers: [
@@ -65,6 +68,7 @@ import { PhotoService } from './services/photo/photo.service';
     CateogryService,
     PhoneService,
     PhotoService,
+    NetworkService,
   ],
 
   exports: [
