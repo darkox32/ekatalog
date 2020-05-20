@@ -99,7 +99,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/administrator/2",
+							"raw": "http://localhost:3000/api/administrator/44",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -108,7 +108,7 @@
 							"path": [
 								"api",
 								"administrator",
-								"2"
+								"44"
 							]
 						}
 					},
@@ -230,7 +230,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"username\": \"pperic\",\n\t\"password\": \"tajnaLozinka2\"\n}"
+							"raw": "{\n\t\"username\": \"Darko\",\n\t\"password\": \"Darko\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/administrator",
@@ -742,7 +742,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/category/1",
+							"raw": "http://localhost:3000/api/category/59",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -751,7 +751,7 @@
 							"path": [
 								"api",
 								"category",
-								"1"
+								"59"
 							]
 						}
 					},
@@ -943,7 +943,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/phone/6",
+							"raw": "http://localhost:3000/api/phone/55",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -952,7 +952,7 @@
 							"path": [
 								"api",
 								"phone",
-								"6"
+								"55"
 							]
 						}
 					},
@@ -1074,7 +1074,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Apple3\",\r\n    \"categoryId\": \"4\",\r\n    \"description\": \"Kratak opis..121212321423543gsdgsdg.\",\r\n    \"ramSize\": \"32\",\r\n    \"storageSize\": \"10\",\r\n    \"screenSize\": \"15\",\r\n    \"price\": \"950.90\",\r\n    \"networks\": [\r\n    \t{\r\n    \t\"networkId\": \"1\",\r\n        \"band\": \"LTE 15005\"\r\n    \t}\r\n   ]\r\n}"
+							"raw": "{\r\n    \"name\": \"Samsung 45\",\r\n    \"categoryId\": \"2\",\r\n    \"description\": \"Kratak opis..121212321423543gsdgsdg.\",\r\n    \"ramSize\": \"32\",\r\n    \"storageSize\": \"10\",\r\n    \"screenSize\": \"15\",\r\n    \"price\": \"950.90\",\r\n    \"networks\": [\r\n    \t{\r\n    \t\"networkId\": \"1\",\r\n        \"band\": \"LTE 15005\"\r\n    \t}\r\n   ]\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/phone/createFull",
@@ -1153,6 +1153,359 @@
 							"body": "{\n    \"phoneId\": 12,\n    \"categoryId\": 2,\n    \"name\": \"Samsung 45\",\n    \"os\": null,\n    \"description\": \"Kratak opis..121212321423543gsdgsdg.\",\n    \"ramSize\": 32,\n    \"storageSize\": 10,\n    \"screenSize\": 15,\n    \"createdAt\": \"2020-05-18T15:22:57.000Z\",\n    \"category\": {\n        \"categoryId\": 2,\n        \"name\": \"Jeftini\",\n        \"imagePath\": \"assets/home.jpg\"\n    },\n    \"networks\": [\n        {\n            \"networkId\": 1,\n            \"name\": \"2G\"\n        }\n    ],\n    \"phoneNetworks\": [\n        {\n            \"phoneNetworkId\": 9,\n            \"phoneId\": 12,\n            \"networkId\": 1,\n            \"band\": \"LTE 15005\"\n        }\n    ],\n    \"phonePrices\": [\n        {\n            \"phonePriceId\": 8,\n            \"phoneId\": 12,\n            \"price\": \"950.90\",\n            \"createdAt\": \"2020-05-18T15:22:57.000Z\"\n        }\n    ]\n}"
 						}
 					]
+				},
+				{
+					"name": "Upload phone photo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/darko/Pictures/Discord Emoji/RCXyIlL.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/phone/6/uploadPhoto/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"phone",
+								"6",
+								"uploadPhoto",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Upload phone photo - file too large",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/C:/Users/darko/Pictures/a4209737834_10.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/phone/6/uploadPhoto/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"phone",
+										"6",
+										"uploadPhoto",
+										""
+									]
+								}
+							},
+							"status": "Payload Too Large",
+							"code": 413,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"49-GtNRsf+DjNWCwgmuatBIerKYgxk\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 19 May 2020 19:47:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 413,\n    \"message\": \"File too large\",\n    \"error\": \"Payload Too Large\"\n}"
+						},
+						{
+							"name": "Upload phone photo - sucess ",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/C:/Users/darko/Pictures/Discord Emoji/RCXyIlL.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/phone/6/uploadPhoto/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"phone",
+										"6",
+										"uploadPhoto",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"48-e97FhGDcIU++MAQJvQ1K3f9KVxI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 19 May 2020 19:28:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"phoneId\": \"6\",\n    \"imagePath\": \"2020519-8218193312-rcxyill.png\",\n    \"photoId\": 2\n}"
+						},
+						{
+							"name": "Upload phone photo - bad file extension",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/C:/Users/darko/Pictures/tumblr_234bb3f5e25dff9c840564f2f87b2aa7_8b78e3b2_500.webp"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/phone/6/uploadPhoto/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"phone",
+										"6",
+										"uploadPhoto",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "69"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"45-/1BctOZfI9HUiikyGHz7sO4T6hY\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 19 May 2020 19:43:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -4002,\n    \"message\": \"Bad file extension!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete single phone photo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/phone/6/deletePhoto/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"phone",
+								"6",
+								"deletePhoto",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete single phone photo - sucess",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/phone/6/deletePhoto/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"phone",
+										"6",
+										"deletePhoto",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"38-nebtkvOUAPq/2cudILrTqw02Mxc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 May 2020 14:05:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"ok\",\n    \"statusCode\": 0,\n    \"message\": \"Photo deleted\"\n}"
+						},
+						{
+							"name": "Delete single phone photo - photo not found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/phone/6/deletePhoto/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"phone",
+										"6",
+										"deletePhoto",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"41-3bqMwT3jdELKjJrA0X6RUs0XSdY\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 May 2020 14:06:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -4004,\n    \"message\": \"Photo not found\"\n}"
+						}
+					]
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -1173,18 +1526,26 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"username\": \"Noviadmin\",\n\t\"password\": \"admin\"\n}"
+							"raw": "{\n\t\"username\": \"Darko\",\n\t\"password\": \"Darko\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/auth/login",
+							"raw": "http://localhost:3000/api/phone/:id/uploadPhoto",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"auth",
-								"login"
+								"api",
+								"phone",
+								":id",
+								"uploadPhoto"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
 							]
 						}
 					},
@@ -1368,6 +1729,361 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"administratorId\": 6,\n    \"username\": \"Noviadmin\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjYsInVzZXJuYW1lIjoiTm92aWFkbWluIiwiZXh0IjoxNTkwNzY0NTUwLjE0NSwiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjQuMSIsImlhdCI6MTU4OTU1NDk1MH0.8q0AFUzywAi3WQRYKnghW999xasX6Ev4pDNssF5c8t8\"\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Network",
+			"item": [
+				{
+					"name": "Get all networks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/network",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"network"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all networks - sucess",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/network",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"network"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "121"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"79-89KcBzruYmziDqWT/a73rB4mam0\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 May 2020 13:43:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"networkId\": 1,\n        \"name\": \"1G\"\n    },\n    {\n        \"networkId\": 2,\n        \"name\": \"2G\"\n    },\n    {\n        \"networkId\": 3,\n        \"name\": \"3G\"\n    },\n    {\n        \"networkId\": 4,\n        \"name\": \"Technology\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Add a network",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"5G\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/network",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"network"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add a network - sucess",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"5G\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/network",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"network"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-osYXQr6qFV5GFPyZeJPmQH5aBtE\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 May 2020 13:47:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"networkId\": 5,\n    \"name\": \"5G\",\n    \"phoneNetworks\": []\n}"
+						},
+						{
+							"name": "Add a network - duplicate entry (treba napraviti obavestenje)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"5G\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/network",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"network"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 May 2020 13:48:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 500,\n    \"message\": \"Internal server error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get single network",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/network/3/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"network",
+								"3",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get single network - sucess",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/network/3/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"network",
+										"3",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "107"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6b-US+g6QhWld2kmnsrMPcDekXA+DA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 May 2020 13:45:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"networkId\": 3,\n    \"name\": \"3G\",\n    \"phoneNetworks\": [\n        {\n            \"phoneNetworkId\": 4,\n            \"phoneId\": 6,\n            \"networkId\": 3,\n            \"band\": \"LTE 1\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Get single non existing network",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/network/33/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"network",
+										"33",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-JgxVIcaH1OoQTo7Uuj3fnfYhTq4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 20 May 2020 13:46:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Network not found\",\n    \"error\": \"Not Found\"\n}"
 						}
 					]
 				}
