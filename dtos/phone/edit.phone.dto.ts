@@ -1,4 +1,4 @@
-export class AddPhoneDto {
+export class EditPhoneDto {
     name: string;
     categoryId: number;
     description: string;
@@ -10,5 +10,5 @@ export class AddPhoneDto {
     networks: {
         networkId: number;
         band: string;
-    }[];
+    }[] | null;
 }

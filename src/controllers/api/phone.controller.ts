@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Param, UseInterceptors, UploadedFile, Req, Delete } from "@nestjs/common";
+import { Controller, Post, Body, Param, UseInterceptors, UploadedFile, Req, Delete, Patch } from "@nestjs/common";
 import { Crud } from "@nestjsx/crud";
 import { PhoneService } from "src/services/phone/phone.service";
 import { Phone } from "src/entities/phone.entity";
@@ -12,6 +12,7 @@ import { ApiResponse } from "misc/api.response.class";
 import * as fileType from "file-type";
 import * as fs from 'fs';
 import * as sharp from 'sharp';
+import { EditPhoneDto } from "dtos/phone/edit.phone.dto";
 
 
 @Controller('api/phone')
@@ -34,6 +35,14 @@ import * as sharp from 'sharp';
             phoneNetworks: { eager: true },
             networks: { eager: true }
         }
+    },
+    routes: {
+        exclude: [
+            'updateOneBase',
+            'replaceOneBase',
+            'deleteOneBase',
+
+        ],
     }
 })
 export class PhoneController {
@@ -46,6 +55,11 @@ export class PhoneController {
     @Post('createFull')
     createFullPhone(@Body() data: AddPhoneDto) {
         return this.service.createFullPhone(data);
+    }
+
+    @Patch(':id')
+    editFullArticle(@Param('id') id: number, @Body() data: EditPhoneDto) {
+        return this.service.editFullPhone(id, data);
     }
 
     @Post(':id/uploadPhoto/') // post /api/article/:id/uploadPhoto
