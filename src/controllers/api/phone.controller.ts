@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Param, UseInterceptors, UploadedFile, Req, Delete, Patch } from "@nestjs/common";
+import { Controller, Post, Body, Param, UseInterceptors, UploadedFile, Req, Delete, Patch, UseGuards } from "@nestjs/common";
 import { Crud } from "@nestjsx/crud";
 import { PhoneService } from "src/services/phone/phone.service";
 import { Phone } from "src/entities/phone.entity";
@@ -13,6 +13,8 @@ import * as fileType from "file-type";
 import * as fs from 'fs';
 import * as sharp from 'sharp';
 import { EditPhoneDto } from "src/dtos/phone/edit.phone.dto";
+import { AllowToRoles } from "misc/allow.to.roles.descriptor";
+import { RoleCheckerGuard } from "misc/role.checker.guard";
 
 
 @Controller('api/phone')
@@ -53,16 +55,22 @@ export class PhoneController {
     ) { }
 
     @Post('createFull')
+    @UseGuards(RoleCheckerGuard)
+    @AllowToRoles('administrator')
     createFullPhone(@Body() data: AddPhoneDto) {
         return this.service.createFullPhone(data);
     }
 
     @Patch(':id')
+    @UseGuards(RoleCheckerGuard)
+    @AllowToRoles('administrator')
     editFullArticle(@Param('id') id: number, @Body() data: EditPhoneDto) {
         return this.service.editFullPhone(id, data);
     }
 
     @Post(':id/uploadPhoto/') // post /api/article/:id/uploadPhoto
+    @UseGuards(RoleCheckerGuard)
+    @AllowToRoles('administrator')
     @UseInterceptors(
         FileInterceptor('photo', {
             storage: diskStorage({
@@ -176,6 +184,8 @@ export class PhoneController {
     }
 
     @Delete(':phoneId/deletePhoto/:photoId')
+    @UseGuards(RoleCheckerGuard)
+    @AllowToRoles('administrator')
     public async deletePhoto(
         @Param('phoneId') phoneId: number,
         @Param('photoId') photoId: number,
