@@ -4,10 +4,10 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { Phone } from "src/entities/phone.entity";
 import { ApiResponse } from "misc/api.response.class";
-import { AddPhoneDto } from "dtos/phone/add.phone.dto";
+import { AddPhoneDto } from "src/dtos/phone/add.phone.dto";
 import { PhonePrice } from "src/entities/phone-price.entity";
 import { PhoneNetwork } from "src/entities/phone-network.entity";
-import { EditPhoneDto } from "dtos/phone/edit.phone.dto";
+import { EditPhoneDto } from "src/dtos/phone/edit.phone.dto";
 
 @Injectable()
 export class PhoneService extends TypeOrmCrudService<Phone>{

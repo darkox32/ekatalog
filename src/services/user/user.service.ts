@@ -3,7 +3,7 @@ import { TypeOrmCrudService } from "@nestjsx/crud-typeorm";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { User } from "src/entities/user.entity";
-import { UserRegistrationDto } from "dtos/user/user.registration.dto";
+import { UserRegistrationDto } from "src/dtos/user/user.registration.dto";
 import { ApiResponse } from "misc/api.response.class";
 import * as crypto from 'crypto';
 
@@ -36,6 +36,20 @@ export class UserService extends TypeOrmCrudService<User>{
         } catch (e) {
             return new ApiResponse('error', -6001, 'This user acc cannot be created.');
         }
+    }
+
+    async getById(id) {
+        return await this.user.findOne(id);
+    }
+
+    async getByEmail(email: string): Promise<User | null> {
+        const user = await this.user.findOne({
+            email: email
+        });
+        if (user) {
+            return user;
+        }
+        return null;
     }
 
 

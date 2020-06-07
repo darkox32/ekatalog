@@ -2,7 +2,7 @@ import { Controller, Post, Body, Param, UseInterceptors, UploadedFile, Req, Dele
 import { Crud } from "@nestjsx/crud";
 import { PhoneService } from "src/services/phone/phone.service";
 import { Phone } from "src/entities/phone.entity";
-import { AddPhoneDto } from "dtos/phone/add.phone.dto";
+import { AddPhoneDto } from "src/dtos/phone/add.phone.dto";
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
 import { StorageConfig } from "config/storage.config";
@@ -12,7 +12,7 @@ import { ApiResponse } from "misc/api.response.class";
 import * as fileType from "file-type";
 import * as fs from 'fs';
 import * as sharp from 'sharp';
-import { EditPhoneDto } from "dtos/phone/edit.phone.dto";
+import { EditPhoneDto } from "src/dtos/phone/edit.phone.dto";
 
 
 @Controller('api/phone')
