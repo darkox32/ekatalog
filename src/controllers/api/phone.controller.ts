@@ -39,12 +39,22 @@ import { RoleCheckerGuard } from "misc/role.checker.guard";
         }
     },
     routes: {
-        exclude: [
-            'updateOneBase',
-            'replaceOneBase',
-            'deleteOneBase',
-
+        only: [
+            'getOneBase',
+            'getManyBase',
         ],
+        getOneBase: {
+            decorators: [
+                UseGuards(RoleCheckerGuard),
+                AllowToRoles('administrator', 'user')
+            ]
+        },
+        getManyBase: {
+            decorators: [
+                UseGuards(RoleCheckerGuard),
+                AllowToRoles('administrator', 'user')
+            ]
+        }
     }
 })
 export class PhoneController {
