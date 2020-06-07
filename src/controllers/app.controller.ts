@@ -1,5 +1,5 @@
 import { Controller, Get, Param } from '@nestjs/common';
-import { AdministratorService } from '../../services/administrator/administrator.service';
+import { AdministratorService } from '../services/administrator/administrator.service';
 
 @Controller()
 export class AppController {
