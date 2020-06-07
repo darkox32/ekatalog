@@ -7,6 +7,8 @@ import {
   PrimaryGeneratedColumn,
 } from "typeorm";
 import { Phone } from "./phone.entity";
+import * as Validator from 'class-validator';
+
 
 @Index("fk_phone_price_phone_id", ["phoneId"], {})
 @Entity("phone_price")
@@ -27,6 +29,14 @@ export class PhonePrice {
     precision: 10,
     scale: 2,
   })
+  @Validator.IsNotEmpty()
+  @Validator.IsPositive()
+  @Validator.IsNumber({
+    allowInfinity: false,
+    allowNaN: false,
+    maxDecimalPlaces: 2,
+  })
+
   price: number;
 
   @Column("timestamp", {

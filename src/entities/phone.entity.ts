@@ -14,6 +14,7 @@ import { PhoneNetwork } from "./phone-network.entity";
 import { PhonePrice } from "./phone-price.entity";
 import { Photo } from "./photo.entity";
 import { Network } from "./network.entity";
+import * as Validator from 'class-validator';
 
 @Index("fk_phone_category_id", ["categoryId"], {})
 @Entity("phone")
@@ -25,6 +26,9 @@ export class Phone {
   categoryId: number;
 
   @Column("varchar", { name: "name", length: 128 })
+  @Validator.IsNotEmpty()
+  @Validator.IsString()
+  @Validator.Length(5, 128)
   name: string;
 
   @Column("enum", {
@@ -32,18 +36,30 @@ export class Phone {
     nullable: true,
     enum: ["Android", "iOS", "Windows", "Blackberry"],
   })
+  @Validator.IsNotEmpty()
+  @Validator.IsString()
+  @Validator.IsIn(["Android", "iOS", "Windows", "Blackberry", null])
   os: "Android" | "iOS" | "Windows" | "Blackberry" | null;
 
   @Column("mediumtext", { name: "description", nullable: true })
+  @Validator.IsNotEmpty()
+  @Validator.IsString()
+  @Validator.Length(64, 10000)
   description: string | null;
 
   @Column("int", { name: "ram_size" })
+  @Validator.IsNotEmpty()
+  @Validator.IsNumber()
   ramSize: number;
 
   @Column("int", { name: "storage_size" })
+  @Validator.IsNotEmpty()
+  @Validator.IsNumber()
   storageSize: number;
 
   @Column("int", { name: "screen_size" })
+  @Validator.IsNotEmpty()
+  @Validator.IsNumber()
   screenSize: number;
 
   @Column("timestamp", {

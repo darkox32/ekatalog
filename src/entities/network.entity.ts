@@ -9,6 +9,7 @@ import {
 } from "typeorm";
 import { PhoneNetwork } from "./phone-network.entity";
 import { Phone } from "./phone.entity";
+import * as Validator from 'class-validator';
 
 @Index("uq_network_name", ["name"], { unique: true })
 @Entity("network")
@@ -25,6 +26,9 @@ export class Network {
     unique: true,
     length: 32,
   })
+  @Validator.IsNotEmpty()
+  @Validator.IsString()
+  @Validator.Length(1, 32)
   name: string;
 
   @OneToMany(() => PhoneNetwork, (phoneNetwork) => phoneNetwork.network)

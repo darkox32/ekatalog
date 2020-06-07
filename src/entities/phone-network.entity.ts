@@ -8,6 +8,8 @@ import {
 } from "typeorm";
 import { Network } from "./network.entity";
 import { Phone } from "./phone.entity";
+import * as Validator from 'class-validator';
+
 
 @Index("uq_phone_network_phone_id_network_id", ["phoneId", "networkId"], {
   unique: true,
@@ -29,6 +31,9 @@ export class PhoneNetwork {
   networkId: number;
 
   @Column("varchar", { name: "band", length: 255 })
+  @Validator.IsNotEmpty()
+  @Validator.IsString()
+  @Validator.Length(1, 255)
   band: string;
 
   @ManyToOne(() => Network, (network) => network.phoneNetworks, {
