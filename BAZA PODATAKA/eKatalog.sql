@@ -23,16 +23,14 @@ CREATE TABLE IF NOT EXISTS `administrator` (
   `password_hash` varchar(128) NOT NULL DEFAULT '0',
   PRIMARY KEY (`administrator_id`) USING BTREE,
   UNIQUE KEY `uq_admin_username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table ekatalog.administrator: ~3 rows (approximately)
+-- Dumping data for table ekatalog.administrator: ~2 rows (approximately)
 /*!40000 ALTER TABLE `administrator` DISABLE KEYS */;
 INSERT INTO `administrator` (`administrator_id`, `username`, `password_hash`) VALUES
 	(1, 'Admin1', 'C82D0A3CD48A7EBD80ED61B1B3169B9CA5C818E35ACF8E87145E163A1302C281F51780040FC2B31EB5933AEC322E15C2F967348411466D1E250AB136F128F092'),
-	(2, 'admn2', '0u25y15029ohifadh\\'),
-	(3, 'pperic', 'tajnaLozinka'),
-	(6, 'Noviadmin', 'admin'),
-	(7, 'Jovo', 'Jovo');
+	(8, 'Jovo2', 'D184D6BBC47CCDA893B84FDF8F8A130D6454690C364E591DA5FD3347E25A474E51C18E2067D626468314ADFEDB107AE647203D34CBEA928572B014C90BBCA47D'),
+	(9, 'Darko', '6FE206A646B55F4827FA241F42DCB0484A5269AAB8F595CC565DF23DFE03AECA48292E8E75C2DD2CA769B2034FA8E6EA253ABEBBE33E532D65C04367FEFEA413');
 /*!40000 ALTER TABLE `administrator` ENABLE KEYS */;
 
 -- Dumping structure for table ekatalog.category
@@ -60,14 +58,15 @@ CREATE TABLE IF NOT EXISTS `network` (
   `name` varchar(32) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   PRIMARY KEY (`network_id`) USING BTREE,
   UNIQUE KEY `uq_network_name` (`name`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='feature kod milana';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='feature kod milana';
 
--- Dumping data for table ekatalog.network: ~4 rows (approximately)
+-- Dumping data for table ekatalog.network: ~5 rows (approximately)
 /*!40000 ALTER TABLE `network` DISABLE KEYS */;
 INSERT INTO `network` (`network_id`, `name`) VALUES
-	(1, '2G'),
-	(2, '3G'),
-	(3, '4G'),
+	(1, '1G'),
+	(2, '2G'),
+	(3, '3G'),
+	(5, '5G'),
 	(4, 'Technology');
 /*!40000 ALTER TABLE `network` ENABLE KEYS */;
 
@@ -84,17 +83,15 @@ CREATE TABLE IF NOT EXISTS `phone` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`phone_id`) USING BTREE,
   KEY `fk_phone_category_id` (`category_id`),
-  CONSTRAINT `fk_phone_category_id` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
+  CONSTRAINT `fk_phone_category_id` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table ekatalog.phone: ~4 rows (approximately)
+-- Dumping data for table ekatalog.phone: ~3 rows (approximately)
 /*!40000 ALTER TABLE `phone` DISABLE KEYS */;
 INSERT INTO `phone` (`phone_id`, `name`, `category_id`, `description`, `os`, `ram_size`, `storage_size`, `screen_size`, `created_at`) VALUES
-	(6, 'Apple X', 1, 'SuperFon', 'iOS', 64, 128, 12, '2020-05-09 15:30:45'),
-	(8, 'Samsung A70', 4, 'MojFonhue', 'Android', 128, 246, 22, '2020-05-09 19:47:06'),
-	(9, 'Samsung A150', 3, 'Kratak opis...', NULL, 32, 10, 15, '2020-05-12 13:40:53'),
-	(10, 'Apple3', 4, 'Kratak opis..121212321423543gsdgsdg.', NULL, 32, 10, 15, '2020-05-12 13:42:30'),
-	(11, 'Appleff$@$!$@!$3555', 4, 'Kratak opis..121212321423543gsdgsdg.', NULL, 32, 10, 15, '2020-05-15 16:18:26');
+	(15, 'Novo Ime', 3, 'Novi opis :)', 'Blackberry', 555, 444, 222, '2020-06-06 20:51:59'),
+	(16, 'Windows 45', 2, 'Kratak opis..121212321423543gsdgsdg.', 'Windows', 32, 10, 15, '2020-06-06 21:06:18'),
+	(17, 'Apple X', 4, 'Stiv Jobs napravio telefon opis', 'iOS', 64, 1024, 9, '2020-06-07 19:25:05');
 /*!40000 ALTER TABLE `phone` ENABLE KEYS */;
 
 -- Dumping structure for table ekatalog.phone_network
@@ -106,18 +103,16 @@ CREATE TABLE IF NOT EXISTS `phone_network` (
   PRIMARY KEY (`phone_network_id`) USING BTREE,
   UNIQUE KEY `uq_phone_network_phone_id_network_id` (`phone_id`,`network_id`),
   KEY `fk_phone_network_network_id` (`network_id`),
-  CONSTRAINT `fk_phone_network_network_id` FOREIGN KEY (`network_id`) REFERENCES `network` (`network_id`) ON UPDATE CASCADE,
-  CONSTRAINT `fk_phone_network_phone_id` FOREIGN KEY (`phone_id`) REFERENCES `phone` (`phone_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  CONSTRAINT `fk_phone_network_network_id` FOREIGN KEY (`network_id`) REFERENCES `network` (`network_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_phone_network_phone_id` FOREIGN KEY (`phone_id`) REFERENCES `phone` (`phone_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table ekatalog.phone_network: ~5 rows (approximately)
+-- Dumping data for table ekatalog.phone_network: ~2 rows (approximately)
 /*!40000 ALTER TABLE `phone_network` DISABLE KEYS */;
 INSERT INTO `phone_network` (`phone_network_id`, `phone_id`, `network_id`, `band`) VALUES
-	(4, 6, 3, 'LTE 1'),
-	(5, 6, 1, 'TRL1'),
-	(6, 9, 1, 'LTE 15005'),
-	(7, 10, 1, 'LTE 15005'),
-	(8, 11, 1, 'LTE 15005');
+	(13, 16, 1, 'LTE 15005'),
+	(15, 15, 3, 'CBA 929'),
+	(16, 17, 3, 'GSP 550');
 /*!40000 ALTER TABLE `phone_network` ENABLE KEYS */;
 
 -- Dumping structure for table ekatalog.phone_price
@@ -128,17 +123,17 @@ CREATE TABLE IF NOT EXISTS `phone_price` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`phone_price_id`) USING BTREE,
   KEY `fk_phone_price_phone_id` (`phone_id`) USING BTREE,
-  CONSTRAINT `fk_phone_price_phone_id` FOREIGN KEY (`phone_id`) REFERENCES `phone` (`phone_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+  CONSTRAINT `fk_phone_price_phone_id` FOREIGN KEY (`phone_id`) REFERENCES `phone` (`phone_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table ekatalog.phone_price: ~5 rows (approximately)
+-- Dumping data for table ekatalog.phone_price: ~4 rows (approximately)
 /*!40000 ALTER TABLE `phone_price` DISABLE KEYS */;
 INSERT INTO `phone_price` (`phone_price_id`, `phone_id`, `price`, `created_at`) VALUES
-	(1, 6, 65.00, '2020-05-09 19:09:21'),
-	(4, 6, 55.00, '2020-05-09 19:09:34'),
-	(5, 9, 50.00, '2020-05-12 13:40:53'),
-	(6, 10, 950.90, '2020-05-12 13:42:30'),
-	(7, 11, 950.90, '2020-05-15 16:18:26');
+	(11, 15, 950.90, '2020-06-06 20:51:59'),
+	(12, 16, 117.23, '2020-06-06 21:06:18'),
+	(13, 15, 666.00, '2020-06-06 21:56:56'),
+	(14, 15, 999.00, '2020-06-06 22:02:24'),
+	(15, 17, 20.00, '2020-06-07 19:25:05');
 /*!40000 ALTER TABLE `phone_price` ENABLE KEYS */;
 
 -- Dumping structure for table ekatalog.photo
@@ -149,13 +144,11 @@ CREATE TABLE IF NOT EXISTS `photo` (
   PRIMARY KEY (`photo_id`),
   UNIQUE KEY `uq_photo_image_path` (`image_path`),
   KEY `fk_photo_phone_id` (`phone_id`) USING BTREE,
-  CONSTRAINT `FK_photo_phone` FOREIGN KEY (`phone_id`) REFERENCES `phone` (`phone_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+  CONSTRAINT `FK_photo_phone` FOREIGN KEY (`phone_id`) REFERENCES `phone` (`phone_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table ekatalog.photo: ~0 rows (approximately)
 /*!40000 ALTER TABLE `photo` DISABLE KEYS */;
-INSERT INTO `photo` (`photo_id`, `phone_id`, `image_path`) VALUES
-	(1, 6, 'img/sr/pck');
 /*!40000 ALTER TABLE `photo` ENABLE KEYS */;
 
 -- Dumping structure for table ekatalog.user
@@ -167,12 +160,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   `surname` varchar(64) NOT NULL DEFAULT '0',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `uq_user_email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table ekatalog.user: ~0 rows (approximately)
+-- Dumping data for table ekatalog.user: ~2 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`user_id`, `email`, `password_hash`, `name`, `surname`) VALUES
-	(1, '@gmail', 'darko', 'dax', 'daxi');
+	(1, '@gmail', 'darko', 'dax', 'daxi'),
+	(2, 'test@test.com', 'D8022F2060AD6EFD297AB73DCC5355C9B214054B0D1776A136A669D26A7D3B14F73AA0D0EBFF19EE333368F0164B6419A96DA49E3E481753E7E96B716BDCCB6F', 'Jovo', 'Jovic'),
+	(4, 'kokiKoric@mail.com', 'C70B5DD9EBFB6F51D09D4132B7170C9D20750A7852F00680F65658F0310E810056E6763C34C9A00B0E940076F54495C169FC2302CCEB312039271C43469507DC', 'Koko', 'Kokic');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

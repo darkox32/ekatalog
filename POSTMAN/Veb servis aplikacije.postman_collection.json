@@ -220,7 +220,7 @@
 				{
 					"name": "Add new admin",
 					"request": {
-						"method": "PUT",
+						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -371,7 +371,7 @@
 				{
 					"name": "Edit admin",
 					"request": {
-						"method": "POST",
+						"method": "PATCH",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -628,16 +628,6 @@
 					]
 				}
 			],
-			"auth": {
-				"type": "bearer",
-				"bearer": [
-					{
-						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjksInVzZXJuYW1lIjoiRGFya28iLCJleHAiOjE1OTA3NzEyNTQuNDE0LCJpcCI6Ijo6MSIsInVhIjoiUG9zdG1hblJ1bnRpbWUvNy4yNC4xIiwiaWF0IjoxNTg5NTYxNjU0fQ.qpoKPWD3IVTi_Bib0G9jzOfJo0xIpjuTOYkIEI0duUw",
-						"type": "string"
-					}
-				]
-			},
 			"event": [
 				{
 					"listen": "prerequest",
@@ -1074,7 +1064,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Samsung 45\",\r\n    \"categoryId\": \"2\",\r\n    \"description\": \"Kratak opis..121212321423543gsdgsdg.\",\r\n    \"ramSize\": \"32\",\r\n    \"storageSize\": \"10\",\r\n    \"screenSize\": \"15\",\r\n    \"price\": \"950.90\",\r\n    \"networks\": [\r\n    \t{\r\n    \t\"networkId\": \"1\",\r\n        \"band\": \"LTE 15005\"\r\n    \t}\r\n   ]\r\n}"
+							"raw": "{\r\n    \"name\": \"Apple X\",\r\n    \"categoryId\": \"4\",\r\n    \"os\": \"iOS\",\r\n    \"description\": \"Stiv Jobs napravio telefon\",\r\n    \"ramSize\": 64,\r\n    \"storageSize\": 1024,\r\n    \"screenSize\": 9,\r\n    \"price\": 20.000,\r\n    \"networks\": [\r\n    \t{\r\n    \t\"networkId\": \"3\",\r\n        \"band\": \"GSP 550\"\r\n    \t}\r\n   ]\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/phone/createFull",
@@ -1092,7 +1082,7 @@
 					},
 					"response": [
 						{
-							"name": "Create new phone - sucess",
+							"name": "Create new phone - success",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -1104,7 +1094,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Samsung 45\",\r\n    \"categoryId\": \"2\",\r\n    \"description\": \"Kratak opis..121212321423543gsdgsdg.\",\r\n    \"ramSize\": \"32\",\r\n    \"storageSize\": \"10\",\r\n    \"screenSize\": \"15\",\r\n    \"price\": \"950.90\",\r\n    \"networks\": [\r\n    \t{\r\n    \t\"networkId\": \"1\",\r\n        \"band\": \"LTE 15005\"\r\n    \t}\r\n   ]\r\n}"
+									"raw": "{\r\n    \"name\": \"Apple X\",\r\n    \"categoryId\": \"4\",\r\n    \"os\": \"iOS\",\r\n    \"description\": \"Stiv Jobs napravio telefon\",\r\n    \"ramSize\": 64,\r\n    \"storageSize\": 1024,\r\n    \"screenSize\": 9,\r\n    \"price\": 20.000,\r\n    \"networks\": [\r\n    \t{\r\n    \t\"networkId\": \"3\",\r\n        \"band\": \"GSP 550\"\r\n    \t}\r\n   ]\r\n}"
 								},
 								"url": {
 									"raw": "http://localhost:3000/api/phone/createFull",
@@ -1134,15 +1124,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "502"
+									"value": "493"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"1f6-aia90aA9MrkiHH+8WVZg//S53rc\""
+									"value": "W/\"1ed-8KNPGv8q4ze229w1qDLBBOcgQgY\""
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 18 May 2020 15:22:57 GMT"
+									"value": "Sun, 07 Jun 2020 17:25:05 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1150,7 +1140,193 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"phoneId\": 12,\n    \"categoryId\": 2,\n    \"name\": \"Samsung 45\",\n    \"os\": null,\n    \"description\": \"Kratak opis..121212321423543gsdgsdg.\",\n    \"ramSize\": 32,\n    \"storageSize\": 10,\n    \"screenSize\": 15,\n    \"createdAt\": \"2020-05-18T15:22:57.000Z\",\n    \"category\": {\n        \"categoryId\": 2,\n        \"name\": \"Jeftini\",\n        \"imagePath\": \"assets/home.jpg\"\n    },\n    \"networks\": [\n        {\n            \"networkId\": 1,\n            \"name\": \"2G\"\n        }\n    ],\n    \"phoneNetworks\": [\n        {\n            \"phoneNetworkId\": 9,\n            \"phoneId\": 12,\n            \"networkId\": 1,\n            \"band\": \"LTE 15005\"\n        }\n    ],\n    \"phonePrices\": [\n        {\n            \"phonePriceId\": 8,\n            \"phoneId\": 12,\n            \"price\": \"950.90\",\n            \"createdAt\": \"2020-05-18T15:22:57.000Z\"\n        }\n    ]\n}"
+							"body": "{\n    \"phoneId\": 17,\n    \"categoryId\": 4,\n    \"name\": \"Apple X\",\n    \"os\": \"iOS\",\n    \"description\": \"Stiv Jobs napravio telefon\",\n    \"ramSize\": 64,\n    \"storageSize\": 1024,\n    \"screenSize\": 9,\n    \"createdAt\": \"2020-06-07T17:25:05.000Z\",\n    \"category\": {\n        \"categoryId\": 4,\n        \"name\": \"Premium\",\n        \"imagePath\": \"assets/pc/e300.jpg\"\n    },\n    \"networks\": [\n        {\n            \"networkId\": 3,\n            \"name\": \"3G\"\n        }\n    ],\n    \"phoneNetworks\": [\n        {\n            \"phoneNetworkId\": 16,\n            \"phoneId\": 17,\n            \"networkId\": 3,\n            \"band\": \"GSP 550\"\n        }\n    ],\n    \"phonePrices\": [\n        {\n            \"phonePriceId\": 15,\n            \"phoneId\": 17,\n            \"price\": \"20.00\",\n            \"createdAt\": \"2020-06-07T17:25:05.000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit single phone, no network",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Novo Ime\",\r\n    \"categoryId\": \"3\",\r\n    \"description\": \"Novi opis :)\",\r\n    \"os\": \"Blackberry\",\r\n    \"ramSize\": \"555\",\r\n    \"storageSize\": \"444\",\r\n    \"screenSize\": \"222\",\r\n    \"price\": \"666\",\r\n    \"networks\": null\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/phone/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"phone",
+								"15"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit single phone, no network - success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Novo Ime\",\r\n    \"categoryId\": \"3\",\r\n    \"description\": \"Novi opis :)\",\r\n    \"os\": \"Blackberry\",\r\n    \"ramSize\": \"555\",\r\n    \"storageSize\": \"444\",\r\n    \"screenSize\": \"222\",\r\n    \"price\": \"666\",\r\n    \"networks\": null\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/phone/15",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"phone",
+										"15"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "581"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"245-0d/bfCznLF/sv7SMJVPRZtXtkvI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Jun 2020 19:56:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"phoneId\": 15,\n    \"categoryId\": 3,\n    \"name\": \"Novo Ime\",\n    \"os\": \"Blackberry\",\n    \"description\": \"Novi opis :)\",\n    \"ramSize\": 555,\n    \"storageSize\": 444,\n    \"screenSize\": 222,\n    \"createdAt\": \"2020-06-06T18:51:59.000Z\",\n    \"category\": {\n        \"categoryId\": 3,\n        \"name\": \"Srednji\",\n        \"imagePath\": \"assets/pc/a500.jpg\"\n    },\n    \"networks\": [\n        {\n            \"networkId\": 1,\n            \"name\": \"1G\"\n        }\n    ],\n    \"phoneNetworks\": [\n        {\n            \"phoneNetworkId\": 12,\n            \"phoneId\": 15,\n            \"networkId\": 1,\n            \"band\": \"LTE 15005\"\n        }\n    ],\n    \"phonePrices\": [\n        {\n            \"phonePriceId\": 11,\n            \"phoneId\": 15,\n            \"price\": \"950.90\",\n            \"createdAt\": \"2020-06-06T18:51:59.000Z\"\n        },\n        {\n            \"phonePriceId\": 13,\n            \"phoneId\": 15,\n            \"price\": \"666.00\",\n            \"createdAt\": \"2020-06-06T19:56:56.000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit single phone, with network",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Novo Ime\",\r\n    \"categoryId\": \"3\",\r\n    \"description\": \"Novi opis :)\",\r\n    \"os\": \"Blackberry\",\r\n    \"ramSize\": \"555\",\r\n    \"storageSize\": \"444\",\r\n    \"screenSize\": \"222\",\r\n    \"price\": \"999\",\r\n    \"networks\": [\r\n    \t{\r\n    \t\t\"networkId\": \"3\",\r\n    \t\t\"band\": \"CBA 929\"\r\n    \t}\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/phone/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"phone",
+								"15"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit single phone, with network - success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Novo Ime\",\r\n    \"categoryId\": \"3\",\r\n    \"description\": \"Novi opis :)\",\r\n    \"os\": \"Blackberry\",\r\n    \"ramSize\": \"555\",\r\n    \"storageSize\": \"444\",\r\n    \"screenSize\": \"222\",\r\n    \"price\": \"999\",\r\n    \"networks\": [\r\n    \t{\r\n    \t\t\"networkId\": \"3\",\r\n    \t\t\"band\": \"CBA 929\"\r\n    \t}\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/phone/15",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"phone",
+										"15"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "668"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29c-SsQCpaV14IglbCLzA7Ua0/uirig\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 06 Jun 2020 20:02:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"phoneId\": 15,\n    \"categoryId\": 3,\n    \"name\": \"Novo Ime\",\n    \"os\": \"Blackberry\",\n    \"description\": \"Novi opis :)\",\n    \"ramSize\": 555,\n    \"storageSize\": 444,\n    \"screenSize\": 222,\n    \"createdAt\": \"2020-06-06T18:51:59.000Z\",\n    \"category\": {\n        \"categoryId\": 3,\n        \"name\": \"Srednji\",\n        \"imagePath\": \"assets/pc/a500.jpg\"\n    },\n    \"networks\": [\n        {\n            \"networkId\": 3,\n            \"name\": \"3G\"\n        }\n    ],\n    \"phoneNetworks\": [\n        {\n            \"phoneNetworkId\": 15,\n            \"phoneId\": 15,\n            \"networkId\": 3,\n            \"band\": \"CBA 929\"\n        }\n    ],\n    \"phonePrices\": [\n        {\n            \"phonePriceId\": 11,\n            \"phoneId\": 15,\n            \"price\": \"950.90\",\n            \"createdAt\": \"2020-06-06T18:51:59.000Z\"\n        },\n        {\n            \"phonePriceId\": 13,\n            \"phoneId\": 15,\n            \"price\": \"666.00\",\n            \"createdAt\": \"2020-06-06T19:56:56.000Z\"\n        },\n        {\n            \"phonePriceId\": 14,\n            \"phoneId\": 15,\n            \"price\": \"999.00\",\n            \"createdAt\": \"2020-06-06T20:02:24.000Z\"\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -1506,30 +1682,23 @@
 							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -4004,\n    \"message\": \"Photo not found\"\n}"
 						}
 					]
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "Auth",
-			"item": [
+				},
 				{
-					"name": "Login",
+					"name": "Search Phone",
 					"request": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"username\": \"Darko\",\n\t\"password\": \"Darko\"\n}"
+							"raw": "{\n\t\"keywords\": \"opis\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/phone/:id/uploadPhoto",
+							"raw": "http://localhost:3000/api/phone/search/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1538,14 +1707,229 @@
 							"path": [
 								"api",
 								"phone",
-								":id",
-								"uploadPhoto"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
+								"search",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search Phone - keyword success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"keywords\": \"opis\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/phone/search/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"phone",
+										"search",
+										""
+									]
 								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1715"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6b3-+x7mWvWck0DuhzndiIxd1Cdx9d8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Jun 2020 17:08:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"phoneId\": 15,\n        \"categoryId\": 3,\n        \"name\": \"Novo Ime\",\n        \"os\": \"Blackberry\",\n        \"description\": \"Novi opis :)\",\n        \"ramSize\": 555,\n        \"storageSize\": 444,\n        \"screenSize\": 222,\n        \"createdAt\": \"2020-06-06T18:51:59.000Z\",\n        \"category\": {\n            \"categoryId\": 3,\n            \"name\": \"Srednji\",\n            \"imagePath\": \"assets/pc/a500.jpg\"\n        },\n        \"networks\": [\n            {\n                \"networkId\": 3,\n                \"name\": \"3G\"\n            }\n        ],\n        \"phoneNetworks\": [\n            {\n                \"phoneNetworkId\": 15,\n                \"phoneId\": 15,\n                \"networkId\": 3,\n                \"band\": \"CBA 929\"\n            }\n        ],\n        \"phonePrices\": [\n            {\n                \"phonePriceId\": 11,\n                \"phoneId\": 15,\n                \"price\": \"950.90\",\n                \"createdAt\": \"2020-06-06T18:51:59.000Z\"\n            },\n            {\n                \"phonePriceId\": 13,\n                \"phoneId\": 15,\n                \"price\": \"666.00\",\n                \"createdAt\": \"2020-06-06T19:56:56.000Z\"\n            },\n            {\n                \"phonePriceId\": 14,\n                \"phoneId\": 15,\n                \"price\": \"999.00\",\n                \"createdAt\": \"2020-06-06T20:02:24.000Z\"\n            }\n        ],\n        \"photos\": []\n    },\n    {\n        \"phoneId\": 16,\n        \"categoryId\": 2,\n        \"name\": \"Windows 45\",\n        \"os\": \"Windows\",\n        \"description\": \"Kratak opis..121212321423543gsdgsdg.\",\n        \"ramSize\": 32,\n        \"storageSize\": 10,\n        \"screenSize\": 15,\n        \"createdAt\": \"2020-06-06T19:06:18.000Z\",\n        \"category\": {\n            \"categoryId\": 2,\n            \"name\": \"Jeftini\",\n            \"imagePath\": \"assets/home.jpg\"\n        },\n        \"networks\": [\n            {\n                \"networkId\": 1,\n                \"name\": \"1G\"\n            }\n        ],\n        \"phoneNetworks\": [\n            {\n                \"phoneNetworkId\": 13,\n                \"phoneId\": 16,\n                \"networkId\": 1,\n                \"band\": \"LTE 15005\"\n            }\n        ],\n        \"phonePrices\": [\n            {\n                \"phonePriceId\": 12,\n                \"phoneId\": 16,\n                \"price\": \"117.23\",\n                \"createdAt\": \"2020-06-06T19:06:18.000Z\"\n            }\n        ],\n        \"photos\": []\n    },\n    {\n        \"phoneId\": 17,\n        \"categoryId\": 4,\n        \"name\": \"Apple X\",\n        \"os\": \"iOS\",\n        \"description\": \"Stiv Jobs napravio telefon opis\",\n        \"ramSize\": 64,\n        \"storageSize\": 1024,\n        \"screenSize\": 9,\n        \"createdAt\": \"2020-06-07T17:25:05.000Z\",\n        \"category\": {\n            \"categoryId\": 4,\n            \"name\": \"Premium\",\n            \"imagePath\": \"assets/pc/e300.jpg\"\n        },\n        \"networks\": [\n            {\n                \"networkId\": 3,\n                \"name\": \"3G\"\n            }\n        ],\n        \"phoneNetworks\": [\n            {\n                \"phoneNetworkId\": 16,\n                \"phoneId\": 17,\n                \"networkId\": 3,\n                \"band\": \"GSP 550\"\n            }\n        ],\n        \"phonePrices\": [\n            {\n                \"phonePriceId\": 15,\n                \"phoneId\": 17,\n                \"price\": \"20.00\",\n                \"createdAt\": \"2020-06-07T17:25:05.000Z\"\n            }\n        ],\n        \"photos\": []\n    }\n]"
+						},
+						{
+							"name": "Search Phone - nepoznata greska",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"networks\": [\n        {\n            \"networkId\": 3,\n            \"bands\": [\"CBA 929\",\"GSP 550\"]\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/phone/search/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"phone",
+										"search",
+										""
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Jun 2020 16:52:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 500,\n    \"message\": \"Internal server error\"\n}"
+						},
+						{
+							"name": "Search Phone - greska networks",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"networks\": [\n        {\n            \"networkId\": 3,\n            \"bands\": [\"CBA 929\",\"GSP 550\"]\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/phone/search/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"phone",
+										"search",
+										""
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 08 Jun 2020 17:06:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 500,\n    \"message\": \"Internal server error\"\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Admin Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"Darko\",\n\t\"password\": \"Darko\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/administrator/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"administrator",
+								"login"
 							]
 						}
 					},
@@ -1729,6 +2113,372 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"administratorId\": 6,\n    \"username\": \"Noviadmin\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjYsInVzZXJuYW1lIjoiTm92aWFkbWluIiwiZXh0IjoxNTkwNzY0NTUwLjE0NSwiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjQuMSIsImlhdCI6MTU4OTU1NDk1MH0.8q0AFUzywAi3WQRYKnghW999xasX6Ev4pDNssF5c8t8\"\n}"
+						}
+					]
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"test@test.com\",\n\t\"password\": \"abcd\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User Login - success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"test@test.com\",\n\t\"password\": \"abcd\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "297"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"129-96Z0fV8llpZwwToPyMApr+zoKik\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Jun 2020 13:08:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"identity\": \"test@test.com\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImlkIjoyLCJpZGVudGl0eSI6InRlc3RAdGVzdC5jb20iLCJleHAiOjE2MTc0NTUzMDAuNTU3LCJpcCI6Ijo6MSIsInVhIjoiUG9zdG1hblJ1bnRpbWUvNy4yNS4wIiwiaWF0IjoxNTkxNTM1MzAwfQ.VaQMlBdICiqKZhPBcF9ay0SEX7485NygdOOW29QJgfk\"\n}"
+						},
+						{
+							"name": "User Login - incorrect pass",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"test@test.com\",\n\t\"password\": \"abcda\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-yGnd1fUn+KRemOJUJKfIJoExxS4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Jun 2020 13:08:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -3002,\n    \"message\": null\n}"
+						},
+						{
+							"name": "User Login - incorrect email",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"test@te1st.com\",\n\t\"password\": \"abcd\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-jVzHjGg0W81AgoBNOOnaoLkouLY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Jun 2020 13:08:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -3001,\n    \"message\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Register new user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@test.com\",\r\n    \"password\": \"abcd\",\r\n    \"name\": \"Jovo\",\r\n    \"surname\": \"Jovic\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register new user - success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"test@test.com\",\r\n    \"password\": \"abcd\",\r\n    \"name\": \"Jovo\",\r\n    \"surname\": \"Jovic\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/user/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "214"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d6-NxeHPTPiKQZTvtHIpMYIIShweAg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Jun 2020 11:53:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"email\": \"test@test.com\",\n    \"passwordHash\": \"D8022F2060AD6EFD297AB73DCC5355C9B214054B0D1776A136A669D26A7D3B14F73AA0D0EBFF19EE333368F0164B6419A96DA49E3E481753E7E96B716BDCCB6F\",\n    \"name\": \"Jovo\",\n    \"surname\": \"Jovic\",\n    \"userId\": 2\n}"
+						},
+						{
+							"name": "Register new user - user account duplicate",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"test@test.com\",\r\n    \"password\": \"abcd\",\r\n    \"name\": \"Jovo\",\r\n    \"surname\": \"Jovic\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/user/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "82"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"52-7tCH+0ev2bGcqsDLzHPAVZtZAYk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 07 Jun 2020 11:54:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -6001,\n    \"message\": \"This user acc cannot be created.\"\n}"
 						}
 					]
 				}
@@ -2096,7 +2846,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjksInVzZXJuYW1lIjoiRGFya28iLCJleHAiOjE1OTA3NzEyNTQuNDE0LCJpcCI6Ijo6MSIsInVhIjoiUG9zdG1hblJ1bnRpbWUvNy4yNC4xIiwiaWF0IjoxNTg5NTYxNjU0fQ.qpoKPWD3IVTi_Bib0G9jzOfJo0xIpjuTOYkIEI0duUw",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW5pc3RyYXRvciIsImlkIjo5LCJpZGVudGl0eSI6IkRhcmtvIiwiZXhwIjoxNjE3NDU1MTU1Ljk5OSwiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjUuMCIsImlhdCI6MTU5MTUzNTE1Nn0.BzYvrTiDklStmzkjzRay9aL_r0PoYbTBlf6sJNieQ5s",
 				"type": "string"
 			}
 		]

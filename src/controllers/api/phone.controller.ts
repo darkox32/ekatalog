@@ -15,6 +15,7 @@ import * as sharp from 'sharp';
 import { EditPhoneDto } from "src/dtos/phone/edit.phone.dto";
 import { AllowToRoles } from "misc/allow.to.roles.descriptor";
 import { RoleCheckerGuard } from "misc/role.checker.guard";
+import { PhoneSearchDto } from "src/dtos/phone/phone.search.dto";
 
 
 @Controller('api/phone')
@@ -222,6 +223,13 @@ export class PhoneController {
 
         return new ApiResponse('ok', 0, 'Photo deleted');
 
+    }
+
+    @Post('search')
+    @UseGuards(RoleCheckerGuard)
+    @AllowToRoles('administrator', 'user')
+    async search(@Body() data: PhoneSearchDto): Promise<Phone[]> {
+        return await this.service.search(data);
     }
 
 }
