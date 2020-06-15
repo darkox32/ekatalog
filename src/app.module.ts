@@ -33,6 +33,7 @@ import { UserToken } from './entities/user-token.entity';
       username: DatabaseConfiguration.username,
       password: DatabaseConfiguration.password,
       database: DatabaseConfiguration.database,
+      logging: true,
       entities: [
         Administrator,
         Category,

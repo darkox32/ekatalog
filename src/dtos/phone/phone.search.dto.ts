@@ -9,7 +9,6 @@ export class PhoneSearchDto {
     keywords: string;
 
     @Validator.IsOptional()
-    //@Validator.IsNotEmpty()
     @Validator.IsPositive()
     @Validator.IsNumber({
         allowInfinity: false,
@@ -19,26 +18,41 @@ export class PhoneSearchDto {
     categoryId: number;
 
     @Validator.IsOptional()
-    @Validator.IsNumber({
-        allowInfinity: false,
-        allowNaN: false,
-        maxDecimalPlaces: 2,
-    })
-    priceMin: number;
+    @Validator.IsString()
+    os: string;
 
     @Validator.IsOptional()
+    @Validator.IsPositive()
     @Validator.IsNumber({
         allowInfinity: false,
         allowNaN: false,
-        maxDecimalPlaces: 2,
+        maxDecimalPlaces: 0,
     })
-    priceMax: number;
+    ramSize: number;
+    
+    @Validator.IsOptional()
+    @Validator.IsPositive()
+    @Validator.IsNumber({
+        allowInfinity: false,
+        allowNaN: false,
+        maxDecimalPlaces: 0,
+    })
+    storageSize: number;
+
+    @Validator.IsOptional()
+    @Validator.IsPositive()
+    @Validator.IsNumber({
+        allowInfinity: false,
+        allowNaN: false,
+        maxDecimalPlaces: 0,
+    })
+    screenSize: number;
 
     networks: PhoneSearchNetworkComponentDto[];
 
     @Validator.IsOptional()
-    @Validator.IsIn(['name', 'price'])
-    orderBy: 'name' | 'price';
+    @Validator.IsIn(['name', 'os', 'ramSize', 'storageSize', 'screenSize'])
+    orderBy: 'name' | 'os' | 'ramSize' | 'storageSize' | 'screenSize';
 
     @Validator.IsOptional()
     @Validator.IsIn(['ASC', 'DESC'])

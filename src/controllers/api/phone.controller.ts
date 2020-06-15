@@ -228,7 +228,7 @@ export class PhoneController {
     @Post('search')
     @UseGuards(RoleCheckerGuard)
     @AllowToRoles('administrator', 'user')
-    async search(@Body() data: PhoneSearchDto): Promise<Phone[]> {
+    async search(@Body() data: PhoneSearchDto): Promise<Phone[] | ApiResponse> {
         return await this.service.search(data);
     }
 

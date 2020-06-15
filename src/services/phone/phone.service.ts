@@ -127,13 +127,8 @@ export class PhoneService extends TypeOrmCrudService<Phone>{
 
     }
 
-    async search(data: PhoneSearchDto): Promise<Phone[]> {
+    async search(data: PhoneSearchDto): Promise<Phone[] | ApiResponse> {
         const builder = await this.phone.createQueryBuilder("phone");
-
-        builder.innerJoinAndSelect(
-            "phone.phonePrices",
-            "pp",
-            "pp.createdAt = (SELECT MAX(pp.created_at) FROM phone_price AS pp WHERE pp.phone_id = phone.phone_id)");
 
         builder.leftJoin("phone.phoneNetworks", "pn");
 
@@ -143,30 +138,36 @@ export class PhoneService extends TypeOrmCrudService<Phone>{
             builder.andWhere(`phone.name LIKE :kw OR phone.description LIKE :kw`, { kw: '%' + data.keywords.trim() + '%' });
         }
 
-        if (data.priceMin && typeof data.priceMin === 'number') {
-            builder.andWhere('pp.price >= :min', { min: data.priceMin });
-        }
-
-        if (data.priceMax && typeof data.priceMax === 'number') {
-            builder.andWhere('pp.price <= :max', { max: data.priceMax });
-        }
-
         if (data.networks && data.networks.length > 0) {
             for (const network of data.networks) {
-                builder.andWhere('pn.phoneId = :nId AND pn IN (:nBands)',
+                builder.andWhere('pn.phoneId = :nId AND pn.band IN (:nBands)',
                     { nId: network.networkId, nBands: network.bands });
             }
         }
 
+        if (data.os && typeof data.os === 'string') {
+            builder.andWhere(`phone.os LIKE :os`, { os: data.os });
+        }
+
+        if (data.ramSize && typeof data.ramSize === 'number') {
+            builder.andWhere('phone.ram_size >= :rsize', { rsize: data.ramSize });
+        }
+
+        if (data.screenSize && typeof data.screenSize === 'number') {
+            builder.andWhere('phone.storage_size >= :scsize', { scsize: data.screenSize });
+        }
+
+        if (data.storageSize && typeof data.storageSize === 'number') {
+            builder.andWhere('phone.ram_size >= :stsize', { stsize: data.storageSize });
+        }
+
+
+        //pocetne predpostavke
         let orderBy = 'phone.name';
         let orderDirection: 'ASC' | 'DESC' = 'ASC';
 
         if (data.orderBy) {
             orderBy = data.orderBy;
-
-            if (orderBy === 'price') {
-                orderBy = 'pp.price';
-            }
 
             if (orderBy === 'name') {
                 orderBy = 'phone.name';
@@ -179,6 +180,7 @@ export class PhoneService extends TypeOrmCrudService<Phone>{
 
         builder.orderBy(orderBy, orderDirection);
 
+        //pocetne predpostavke
         let page = 0;
         let perPage: 5 | 10 | 25 | 50 | 75 = 25;
 
@@ -195,6 +197,9 @@ export class PhoneService extends TypeOrmCrudService<Phone>{
 
         let phoneIds = await (await builder.getMany()).map(phone => phone.phoneId);
 
+        if (phoneIds.length === 0) {
+            return new ApiResponse("ok", 0, "Nema takvih telefona")
+        }
 
 
         return await this.phone.find({
