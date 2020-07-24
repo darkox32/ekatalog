@@ -23,6 +23,7 @@ import { NetworkService } from './services/network/network.service';
 import { NetworkController } from './controllers/api/network.controller';
 import { UserService } from './services/user/user.service';
 import { UserToken } from './entities/user-token.entity';
+import { AdministratorToken } from './entities/administrator-token.entity';
 
 @Module({
   imports: [
@@ -43,7 +44,8 @@ import { UserToken } from './entities/user-token.entity';
         Phone,
         Photo,
         User,
-        UserToken
+        UserToken,
+        AdministratorToken
       ]
     }),
     TypeOrmModule.forFeature([
@@ -55,7 +57,8 @@ import { UserToken } from './entities/user-token.entity';
       Phone,
       Photo,
       User,
-      UserToken
+      UserToken,
+      AdministratorToken
 
     ])
   ],
@@ -66,6 +69,7 @@ import { UserToken } from './entities/user-token.entity';
     PhoneController,
     AuthController,
     NetworkController,
+    
 
   ],
   providers: [
@@ -75,6 +79,7 @@ import { UserToken } from './entities/user-token.entity';
     PhotoService,
     NetworkService,
     UserService,
+    
   ],
 
   exports: [

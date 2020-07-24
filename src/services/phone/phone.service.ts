@@ -162,6 +162,7 @@ export class PhoneService extends TypeOrmCrudService<Phone>{
         }
 
 
+
         //pocetne predpostavke
         let orderBy = 'phone.name';
         let orderDirection: 'ASC' | 'DESC' = 'ASC';
@@ -200,7 +201,6 @@ export class PhoneService extends TypeOrmCrudService<Phone>{
         if (phoneIds.length === 0) {
             return new ApiResponse("ok", 0, "Nema takvih telefona")
         }
-
 
         return await this.phone.find({
             where: { phoneId: In(phoneIds) },
