@@ -732,7 +732,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/category/59",
+							"raw": "http://localhost:3000/api/category/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -741,7 +741,7 @@
 							"path": [
 								"api",
 								"category",
-								"59"
+								"1"
 							]
 						}
 					},
@@ -933,7 +933,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/phone/55",
+							"raw": "http://localhost:3000/api/phone/16",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -942,7 +942,7 @@
 							"path": [
 								"api",
 								"phone",
-								"55"
+								"16"
 							]
 						}
 					},
@@ -1899,6 +1899,28 @@
 					]
 				}
 			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ca6b7ac8-483d-45d0-b000-35e847c44794",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "5889669c-4e57-4256-b5c1-5259d5522e8f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
 			"protocolProfileBehavior": {}
 		},
 		{
@@ -1917,7 +1939,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"username\": \"Darko\",\n\t\"password\": \"Darko\"\n}"
+							"raw": "{\n\t\"username\": \"darko\",\n\t\"password\": \"darko\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/auth/administrator/login",
@@ -2129,7 +2151,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\": \"test@test.com\",\n\t\"password\": \"abcd\"\n}"
+							"raw": "{\n\t\"email\": \"test@authentifikacija.com\",\n\t\"password\": \"123456\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/auth/user/login",
@@ -2334,11 +2356,11 @@
 				{
 					"name": "Register new user",
 					"request": {
-						"method": "PUT",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"test@test.com\",\r\n    \"password\": \"abcd\",\r\n    \"name\": \"Jovo\",\r\n    \"surname\": \"Jovic\"\r\n}",
+							"raw": "{\r\n    \"email\": \"test@authentifikacija.com\",\r\n    \"password\": \"123456\",\r\n    \"name\": \"Teste\",\r\n    \"surname\": \"Toki\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2479,6 +2501,97 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -6001,\n    \"message\": \"This user acc cannot be created.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Refresh user token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImlkIjo1LCJpZGVudGl0eSI6InRlc3RAYXV0aGVudGlmaWthY2lqYS5jb20iLCJleHAiOjE1OTQzOTAyMjkuNjU4LCJpcCI6Ijo6MSIsInVhIjoiUG9zdG1hblJ1bnRpbWUvNy4yNS4wIiwiaWF0IjoxNTkxNzExODI5fQ.oba3wbnkKk1unZ73FSKE-sLriNNqWauskEVdjFlnLqE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/user/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"user",
+								"refresh"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Refresh user token - success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImlkIjo1LCJpZGVudGl0eSI6InRlc3RAYXV0aGVudGlmaWthY2lqYS5jb20iLCJleHAiOjE1OTQzOTAyMjkuNjU4LCJpcCI6Ijo6MSIsInVhIjoiUG9zdG1hblJ1bnRpbWUvNy4yNS4wIiwiaWF0IjoxNTkxNzExODI5fQ.oba3wbnkKk1unZ73FSKE-sLriNNqWauskEVdjFlnLqE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/user/refresh",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"user",
+										"refresh"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "659"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"293-g5gTNcb/oYDL8Xb203L1OSq0eFs\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Jun 2020 14:15:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 5,\n    \"identity\": \"test@authentifikacija.com\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImlkIjo1LCJpZGVudGl0eSI6InRlc3RAYXV0aGVudGlmaWthY2lqYS5jb20iLCJleHAiOjE1OTE3MTI0MjkuMDIsImlwIjoiOjoxIiwidWEiOiJQb3N0bWFuUnVudGltZS83LjI1LjAiLCJpYXQiOjE1OTE3MTIxMjl9.haw0vH0M6d8Bi4aLiMUGPFglWaIegAj-u4dAG7hMJaw\",\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImlkIjo1LCJpZGVudGl0eSI6InRlc3RAYXV0aGVudGlmaWthY2lqYS5jb20iLCJleHAiOjE1OTQzOTAyMjkuNjU4LCJpcCI6Ijo6MSIsInVhIjoiUG9zdG1hblJ1bnRpbWUvNy4yNS4wIiwiaWF0IjoxNTkxNzExODI5fQ.oba3wbnkKk1unZ73FSKE-sLriNNqWauskEVdjFlnLqE\",\n    \"refreshTokenExpiresAt\": \"2020-07-10T14:10:29.658Z\"\n}"
 						}
 					]
 				}
@@ -2846,7 +2959,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW5pc3RyYXRvciIsImlkIjo5LCJpZGVudGl0eSI6IkRhcmtvIiwiZXhwIjoxNjE3NDU1MTU1Ljk5OSwiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjUuMCIsImlhdCI6MTU5MTUzNTE1Nn0.BzYvrTiDklStmzkjzRay9aL_r0PoYbTBlf6sJNieQ5s",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW5pc3RyYXRvciIsImlkIjo5LCJpZGVudGl0eSI6ImRhcmtvIiwiZXhwIjoxNjAxNzU1MTAwLjIxMiwiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjYuMyIsImlhdCI6MTU5OTA3NjcwMH0.AT3PJmd9Npjr2NrCaGxEfVsovZPYVPyCKjUvQRmP3Mo",
 				"type": "string"
 			}
 		]
